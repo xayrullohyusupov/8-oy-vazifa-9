@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Detail</title>
+</head>
+<body>
+    <h1>Answer Detail</h1>
+    <div>
+        <p><strong>ID:</strong> {{ answer.id }}</p>
+        <p><strong>Quiz:</strong> {{ answer.quiz.name }}</p>
+        <p><strong>Answer:</strong> {{ answer.answer_text }}</p>
+        <p><strong>Is Correct:</strong> {{ answer.is_correct }}</p>
+        <!-- Qo'shimcha ma'lumotlarni shu yerga qo'shishingiz mumkin -->
+    </div>
+    <a href="{% url 'participants' answer.quiz.id %}">Orqaga qaytish</a>
+    <a href="{% url 'export_answer_details_to_excel' answer_id=answer.id %}">Export to Excel</a>
+</body>
+</html>
